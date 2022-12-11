@@ -93,19 +93,23 @@ namespace data_structures_algorithms_library
             return hashed;
         }
 
+        // student compare to, may want to add in date registered for comparisons as well
+
         public int CompareTo(Student other)
         {
             return this.Program.CompareTo(other.Program);
         }
 
-        public
+        // *** may want to also override the boolean operators (as in lecture)
+
+        //public
+
+        // do I need this? (below) - probably not, it's just saying it's not implemented
 
         //int IComparable<Address>.CompareTo(Address other)
         //{
         //    throw new NotImplementedException();
         //}
-
-        // fix error CS1004: Duplicate 'public' modifier
 
         public static bool operator ==(Student a, Student b) => object.Equals(a, b);
         public static bool operator !=(Student a, Student b) => !object.Equals(a, b);

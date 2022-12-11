@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace data_structures_algorithms_library
 {
@@ -67,13 +68,47 @@ namespace data_structures_algorithms_library
 
             Console.WriteLine("------------- testing Student -------------");
 
-            Student student = new Student();
-            Student student1 = new Student("Physics", "Wednesday 06/06/2022");
+            // creating list of student objects
+            List<Student> students = new List<Student>();
+            students.Add(new Student { personName = "Sherry", Program = "Maths", DateRegistered = "01/07/2022" });
+            students.Add(new Student { personName = "Rose", Program = "Food Technology", DateRegistered = "02/09/2020" });
+            students.Add(new Student { personName = "Ginny", Program = "Psychology", DateRegistered = "29/07/2019" });
+            students.Add(new Student { personName = "Brandy", Program = "Chemistry", DateRegistered = "11/11/2005" });
+            Console.WriteLine(" \n Unsorted students:");
+            //Console.WriteLine(students.ToString());
+            //print(students);
 
-            String showStudent = "student Program: " + student.Program + "\nDate Registered: " + student.DateRegistered;
+            foreach (var student in students)
+            {
+                Console.WriteLine(student);
+            }
+
+            Console.WriteLine(" \n Students sorted by program in ascending order:");
+            Utility.BubbleSortAsc(students);
+
+            foreach (var student in students)
+            {
+                Console.WriteLine(student);
+            }
+
+            //Console.WriteLine(students.ToString());
+
+            Console.WriteLine(" \n Students sorted by program in descending order:");
+            Utility.BubbleSortDesc(students);
+
+            foreach (var student in students)
+            {
+                Console.WriteLine(student);
+            }
+            //Console.WriteLine(students.ToString());
+
+            Student student3 = new Student();
+            Student student1 = new Student("Physics", "06/06/2022");
+
+            String showStudent = "student Program: " + student3.Program + "\nDate Registered: " + student3.DateRegistered;
             String showStudent1 = "student Program: " + student1.Program + "\nDate Registered: " + student1.DateRegistered;
-            bool equalStudentTrue = student.Equals(student);
-            bool equalStudentFalse = student.Equals(student1);
+            bool equalStudentTrue = student3.Equals(student3);
+            bool equalStudentFalse = student3.Equals(student1);
 
             Console.WriteLine("\nStudent1: " + showStudent + "\nStudent 2: " + showStudent1 + "\nshould be true: " + equalStudentTrue + "\nshould be false: " + equalStudentFalse);
 
