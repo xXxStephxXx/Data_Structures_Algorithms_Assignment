@@ -18,14 +18,22 @@ namespace data_structures_algorithms_library
         // composition
         Enrollment enrol = new Enrollment();
 
-        // might want to use the all arg constructor for Person here, but it's not working and I'm not sure why, might have something to do with the enrollment class relationship
         public Student(String Program, String DateRegistered) : base() // base(personName, personEmail, personTelNum) //Person person
         {
             this.Program = Program;
             this.DateRegistered = DateRegistered;
             Enrollment enrol = new Enrollment();
             //this.enrol = new Enrollment();
+        }
 
+        public Student(string Program, string DateRegistered, string personName, string personEmail, string personTelNum, Enrollment enrollment)
+        {
+            Program = this.Program;
+            DateRegistered = this.DateRegistered;
+            personName = this.personName;
+            personEmail = this.personEmail;
+            personTelNum = this.personTelNum;
+            enrollment = new Enrollment();
         }
 
         public Student()
@@ -100,7 +108,7 @@ namespace data_structures_algorithms_library
             return this.Program.CompareTo(other.Program);
         }
 
-        // *** may want to also override the boolean operators (as in lecture)
+        //////////// *** may want to also override the boolean operators (as in lecture) ////////////////
 
         //public
 

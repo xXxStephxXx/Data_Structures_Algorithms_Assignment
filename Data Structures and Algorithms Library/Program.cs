@@ -71,13 +71,11 @@ namespace data_structures_algorithms_library
             // creating list of student objects
             List<Student> students = new List<Student>();
             students.Add(new Student { personName = "Sherry", Program = "Maths", DateRegistered = "01/07/2022" });
-            students.Add(new Student { personName = "Rose", Program = "Food Technology", DateRegistered = "02/09/2020" });
+            students.Add(new Student { personName = "Rose", Program = "Finance", DateRegistered = "02/09/2020" });
             students.Add(new Student { personName = "Ginny", Program = "Psychology", DateRegistered = "29/07/2019" });
             students.Add(new Student { personName = "Brandy", Program = "Chemistry", DateRegistered = "11/11/2005" });
+            
             Console.WriteLine(" \n Unsorted students:");
-            //Console.WriteLine(students.ToString());
-            //print(students);
-
             foreach (var student in students)
             {
                 Console.WriteLine(student);
@@ -85,22 +83,17 @@ namespace data_structures_algorithms_library
 
             Console.WriteLine(" \n Students sorted by program in ascending order:");
             Utility.BubbleSortAsc(students);
-
             foreach (var student in students)
             {
                 Console.WriteLine(student);
             }
-
-            //Console.WriteLine(students.ToString());
 
             Console.WriteLine(" \n Students sorted by program in descending order:");
             Utility.BubbleSortDesc(students);
-
             foreach (var student in students)
             {
                 Console.WriteLine(student);
             }
-            //Console.WriteLine(students.ToString());
 
             Student student3 = new Student();
             Student student1 = new Student("Physics", "06/06/2022");
@@ -113,6 +106,64 @@ namespace data_structures_algorithms_library
             Console.WriteLine("\nStudent1: " + showStudent + "\nStudent 2: " + showStudent1 + "\nshould be true: " + equalStudentTrue + "\nshould be false: " + equalStudentFalse);
 
             //student.GetHashCode
+
+            Console.WriteLine("------------- Testing Doubly Linked Lists -------------");
+
+            // Testing Doubly Linked Lists
+
+            Dbl_LinkedList<Student> studentDLL = new Dbl_LinkedList<Student>();
+            //studentDLL.Add
+
+            studentDLL.Add(new Student { personName = "Abby", Program = "Maths", DateRegistered = "01/07/2022" });
+            studentDLL.Add(new Student { personName = "Katie", Program = "Finance", DateRegistered = "02/09/2020" });
+            studentDLL.Add(new Student { personName = "Cameron", Program = "Psychology", DateRegistered = "29/07/2019" });
+            studentDLL.Add(new Student { personName = "Timothy", Program = "Chemistry", DateRegistered = "11/11/2005" });
+
+            foreach (Student value in studentDLL)
+            {
+                Console.WriteLine(value);
+            }
+
+            //this.Program = "no program selected";
+            //this.DateRegistered = "no date selected";
+            //this.personName = "N/A";
+            //this.personEmail = "N/A";
+            //this.personTelNum = "no number provided";
+            //this.enrol = new Enrollment();
+
+            Console.WriteLine(" \n After new student added:");
+
+            // *** not saving student properly when I write it like this
+            //Student student_test = new Student("Geology", "1/11/2000", "Amethyst", "ame@hotmale.com", "01189998819991197253", new Enrollment());
+
+            // *** works when I do it like this vvv but I can't save that student to use elsewhere, eg. finding it in the linkedlist
+            //studentDLL.AddLast(new Student { personName = "Amethyst", Program = "Geology", DateRegistered = "1/11/2000" });
+
+            Student student_test2;
+
+            studentDLL.AddLast(student_test2 = new Student { personName = "Amethyst", Program = "Geology", DateRegistered = "1/11/2000" });
+
+            foreach (Student value in studentDLL)
+            {
+                Console.WriteLine(value);
+            }
+
+            bool studentContains = studentDLL.Contains(student_test2);
+            Console.WriteLine("\n the student is already in the list = " + studentContains);
+
+            studentDLL.RemoveFirst();
+            Console.WriteLine(" \n After first student removed:");
+            foreach (Student value in studentDLL)
+            {
+                Console.WriteLine(value);
+            }
+
+            studentDLL.RemoveLast();
+            Console.WriteLine(" \n After last student removed:");
+            foreach (Student value in studentDLL)
+            {
+                Console.WriteLine(value);
+            }
 
         }
     }

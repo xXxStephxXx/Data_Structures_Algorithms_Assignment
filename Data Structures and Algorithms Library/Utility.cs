@@ -6,12 +6,11 @@ namespace data_structures_algorithms_library
 {
     public class Utility //<T> where T : IComparable<T>
     {
-
         public static void BubbleSortAsc<T>(List<T> list) where T : IComparable<T>
         {
-            for (int i = 0; i < list.Count-2; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                for (int j = 0; j < list.Count - 2; j++)
+                for (int j = 0; j < list.Count - 1; j++)
                 {
                     if (list[j].CompareTo(list[j + 1]) > 0)
                     {
@@ -25,9 +24,9 @@ namespace data_structures_algorithms_library
 
         public static void BubbleSortDesc<T>(List<T> list) where T : IComparable<T>
         {
-            for (int i = 0; i < list.Count - 2; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                for (int j = 0; j < list.Count - 2; j++)
+                for (int j = 0; j < list.Count - 1; j++)
                 {
                     if (list[j].CompareTo(list[j + 1]) < 0)
                     {

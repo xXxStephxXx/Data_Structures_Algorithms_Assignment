@@ -6,4 +6,8 @@
     <RootNamespace>data_structures_algorithms_library</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NPOI" Version="2.6.0" />
+  </ItemGroup>
+
 </Project>
