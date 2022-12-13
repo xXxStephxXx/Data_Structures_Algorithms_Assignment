@@ -4,7 +4,7 @@ using System.Text;
 
 namespace data_structures_algorithms_library
 {
-    // edited to for String rather than int, implemeneted IComparable<T>
+    // edited to for String rather than int, implemented IComparable<T>
 
     class BinaryTree<T> where T : IComparable<T>
     {
@@ -19,10 +19,10 @@ namespace data_structures_algorithms_library
             {
                 before = after;
                 if (value.CompareTo(after.Data) < 0)
-                //if (value < after.Data) //Is new node in left tree? 
+                //if (value < after.Data)
                     after = after.LeftNode;
                 else if (value.CompareTo(after) > 0)
-                //else if (value > after.Data) //Is new node in right tree?
+                //else if (value > after.Data)
                     after = after.RightNode;
                 else
                 {
@@ -34,7 +34,7 @@ namespace data_structures_algorithms_library
             Node newNode = new Node();
             newNode.Data = value;
 
-            if (this.Root == null)//Tree is empty
+            if (this.Root == null)
                 this.Root = newNode;
             else
             {
@@ -71,19 +71,15 @@ namespace data_structures_algorithms_library
             else if (key.CompareTo(parent.Data) > 0)
                 parent.RightNode = Remove(parent.RightNode, key);
 
-            // if value is same as parent's value, then this is the node to be deleted  
             else
             {
-                // node with only one child or no child  
                 if (parent.LeftNode == null)
                     return parent.RightNode;
                 else if (parent.RightNode == null)
                     return parent.LeftNode;
 
-                // node with two children: Get the inorder successor (smallest in the right subtree)  
                 parent.Data = MinValue(parent.RightNode);
 
-                // Delete the inorder successor  
                 parent.RightNode = Remove(parent.RightNode, parent.Data);
             }
 
@@ -120,8 +116,6 @@ namespace data_structures_algorithms_library
                 return null;
             }
         }
-
-
 
         public int GetTreeDepth()
         {

@@ -41,8 +41,6 @@ namespace data_structures_algorithms_library
 
             enrollment.setCourse(course1);
 
-            // may need to fix up the bit below for enrollment and course
-
             String showEnrollment = "Enrollment Date: " + enrollment.dateEnrolled + "\nGrade: " + enrollment.grade + "\nSemester: " + enrollment.semester
                 + showCourse2;
             // + "\nCourse code: " + enrollment2.course.courseCode + ", name: " + enrollment2.course.courseName + ", cost: $" + enrollment2.course.courseCost.ToString();
@@ -53,42 +51,68 @@ namespace data_structures_algorithms_library
 
             Console.WriteLine("------------- testing Address -------------");
 
-            //Address address1 = new Address("12", "test st", "test suburb", "1111", "SA");
-            //Address address2 = new Address();
+            Address address1 = new Address("12", "test st", "test suburb", "1111", "SA");
+            Address address2 = new Address();
 
-            //String showAddress = "course code: " + address1.Number + "\ncourse name: " + address1.Street + "\ncourse cost: $" + address1.Suburb + "\npostcode: "
-            //    + address1.Postcode + "\nstate: " + address1.State;
+            String showAddress = "course code: " + address1.Number + "\ncourse name: " + address1.Street + "\ncourse cost: $" + address1.Suburb + "\npostcode: "
+                + address1.Postcode + "\nstate: " + address1.State;
 
-            //String showAddress2 = "Street Number: " + address2.Number + "\nStreet name: " + address2.Street + "\nSuburb: " + address2.Suburb + "\npostcode: "
-            //    + address2.Postcode + "\nstate: " + address2.State;
-            //bool equalAddressTrue = address1.Equals(address1);
-            //bool equalAddressFalse = address1.Equals(address2);
+            String showAddress2 = "Street Number: " + address2.Number + "\nStreet name: " + address2.Street + "\nSuburb: " + address2.Suburb + "\npostcode: "
+                + address2.Postcode + "\nstate: " + address2.State;
+            bool equalAddressTrue = address1.Equals(address1);
+            bool equalAddressFalse = address1.Equals(address2);
 
-            //Console.WriteLine("\naddress 1: " + showAddress + "\naddress 2: " + showAddress2 + "\nshould be true: " + equalEnrollmentTrue + "\nshould be false: " + equalEnrollmentFalse);
+            Console.WriteLine("\naddress 1: " + showAddress + "\naddress 2: " + showAddress2 + "\nshould be true: " + equalEnrollmentTrue + "\nshould be false: " + equalEnrollmentFalse);
 
             Console.WriteLine("------------- testing Student -------------");
 
             // creating list of student objects
             List<Student> students = new List<Student>();
-            students.Add(new Student { personName = "Sherry", Program = "Maths", DateRegistered = "01/07/2022" });
-            students.Add(new Student { personName = "Rose", Program = "Finance", DateRegistered = "02/09/2020" });
-            students.Add(new Student { personName = "Ginny", Program = "Psychology", DateRegistered = "29/07/2019" });
-            students.Add(new Student { personName = "Brandy", Program = "Chemistry", DateRegistered = "11/11/2005" });
-            
+
+            Student studentSherry = new Student();
+            Student studentRose = new Student();
+            Student studentGinny = new Student();
+            Student studentBrandy = new Student();
+            Student studentAndreas = new Student();
+            Student studentLeonardo = new Student();
+            Student studentDaphne = new Student();
+            Student studentPetunia = new Student();
+            Student studentLilly = new Student();
+            Student studentSaul = new Student();
+
+            students.Add(studentSherry = new Student { personName = "Sherry", Program = "Maths", DateRegistered = "01/07/2022" });
+            students.Add(studentRose = new Student { personName = "Rose", Program = "Finance", DateRegistered = "02/09/2020" });
+            students.Add(studentGinny = new Student { personName = "Ginny", Program = "Psychology", DateRegistered = "29/07/2019" });
+            students.Add(studentBrandy = new Student { personName = "Brandy", Program = "Chemistry", DateRegistered = "11/11/2005" });
+            students.Add(studentAndreas = new Student { personName = "Andreas", Program = "Geography", DateRegistered = "01/07/2022" });
+            students.Add(studentLeonardo = new Student { personName = "Leonardo", Program = "Science", DateRegistered = "02/09/2020" });
+            students.Add(studentDaphne = new Student { personName = "Daphne", Program = "Astronomy", DateRegistered = "29/07/2019" });
+            students.Add(studentPetunia = new Student { personName = "Petunia", Program = "Astrology", DateRegistered = "11/11/2005" });
+            students.Add(studentLilly = new Student { personName = "Lilly", Program = "Art", DateRegistered = "29/07/2019" });
+            students.Add(studentSaul = new Student { personName = "Saul", Program = "Drama", DateRegistered = "11/11/2005" });
+
+            // Linear search, not appearing in the list to use
+            //students.LinearSearch(studentSherry);
+
             Console.WriteLine(" \n Unsorted students:");
             foreach (var student in students)
             {
                 Console.WriteLine(student);
             }
 
-            Console.WriteLine(" \n Students sorted by program in ascending order:");
+            Console.WriteLine(" \n Students sorted by program in ascending order (bubble sort):");
             Utility.BubbleSortAsc(students);
             foreach (var student in students)
             {
                 Console.WriteLine(student);
             }
 
-            Console.WriteLine(" \n Students sorted by program in descending order:");
+            Console.WriteLine(" \n Testing Binary Search");
+
+            String binarytest = students.BinarySearch(studentGinny).ToString();
+            Console.WriteLine(binarytest);
+
+            Console.WriteLine(" \n Students sorted by program in descending order (bubble sort):");
             Utility.BubbleSortDesc(students);
             foreach (var student in students)
             {
@@ -112,7 +136,6 @@ namespace data_structures_algorithms_library
             // Testing Doubly Linked Lists
 
             Dbl_LinkedList<Student> studentDLL = new Dbl_LinkedList<Student>();
-            //studentDLL.Add
 
             studentDLL.Add(new Student { personName = "Abby", Program = "Maths", DateRegistered = "01/07/2022" });
             studentDLL.Add(new Student { personName = "Katie", Program = "Finance", DateRegistered = "02/09/2020" });
@@ -124,24 +147,7 @@ namespace data_structures_algorithms_library
                 Console.WriteLine(value);
             }
 
-            //this.Program = "no program selected";
-            //this.DateRegistered = "no date selected";
-            //this.personName = "N/A";
-            //this.personEmail = "N/A";
-            //this.personTelNum = "no number provided";
-            //this.enrol = new Enrollment();
-
-            Console.WriteLine(" \n After new student added:");
-
-            // *** not saving student properly when I write it like this
-            //Student student_test = new Student("Geology", "1/11/2000", "Amethyst", "ame@hotmale.com", "01189998819991197253", new Enrollment());
-
-            // *** works when I do it like this vvv but I can't save that student to use elsewhere, eg. finding it in the linkedlist
-            //studentDLL.AddLast(new Student { personName = "Amethyst", Program = "Geology", DateRegistered = "1/11/2000" });
-
-            //Console.WriteLine(" \n testing:");
-            //Student student_test = new Student("Geology", "1/11/2000", "Amethyst", "ame@hotmale.com", "01189998819991197253", new Enrollment());
-            //Console.WriteLine(student_test + " \n end of testing:");
+            Console.WriteLine(" \n After new student added last:");
 
             Student student_test2;
 
@@ -169,12 +175,25 @@ namespace data_structures_algorithms_library
                 Console.WriteLine(value);
             }
 
-            // used names for the binary search tree as I don't have an id attribute in my student class
-            //Student studentBinTreeTest;
-            //Student studentBinTreeTest1;
-            //Student studentBinTreeTest2;
+            Student student_test4;
 
-            //BinaryTree.Add(studentBinTreeTest = new Student { personName = "Amethyst" });
+            studentDLL.AddFirst(student_test4 = new Student { personName = "Cassy", Program = "Midwifery", DateRegistered = "1/11/2000" });
+            Console.WriteLine(" \n After new student added first:");
+            foreach (Student value in studentDLL)
+            {
+                Console.WriteLine(value);
+            }
+
+            Console.WriteLine("------------- Testing Binary Trees -------------");
+
+            // currently causes error that I'm not sure how to fix if uncommented
+
+            //BinaryTree<Student> binary_tree_test = new BinaryTree<Student>();
+            //binary_tree_test.Add(studentAndreas.personName.ToString());
+            //binary_tree_test.Add(studentLeonardo.personName.ToString());
+            //binary_tree_test.Add(studentSaul.personName.ToString());
+
+            //Console.WriteLine("contents of binary tree" + binary_tree_test);
 
         }
     }

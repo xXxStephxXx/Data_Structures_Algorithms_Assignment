@@ -7,7 +7,6 @@ namespace data_structures_algorithms_library
     // Student inherits from the person class
     // Composite relationship with Enrollment
 
-    // check to make sure that I don't need to do this bit below differently
     //class Student : Person, IComparable<Address>
     class Student : Person, IComparable<Student>
     {
@@ -50,7 +49,6 @@ namespace data_structures_algorithms_library
         {
             return String.Format("{0} {1}", personName, Program);
 
-            // auto generated
             //return base.ToString();
         }
 
@@ -107,12 +105,6 @@ namespace data_structures_algorithms_library
         {
             return this.Program.CompareTo(other.Program);
         }
-
-        //////////// *** may want to also override the boolean operators (as in lecture) ////////////////
-
-        //public
-
-        // do I need this? (below) - probably not, it's just saying it's not implemented
 
         //int IComparable<Address>.CompareTo(Address other)
         //{
