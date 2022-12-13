@@ -170,11 +170,11 @@ namespace data_structures_algorithms_library
             }
 
             // used names for the binary search tree as I don't have an id attribute in my student class
-            Student studentBinTreeTest;
-            Student studentBinTreeTest1;
-            Student studentBinTreeTest2;
+            //Student studentBinTreeTest;
+            //Student studentBinTreeTest1;
+            //Student studentBinTreeTest2;
 
-            BinaryTree.Add(studentBinTreeTest = new Student { personName = "Amethyst" });
+            //BinaryTree.Add(studentBinTreeTest = new Student { personName = "Amethyst" });
 
         }
     }

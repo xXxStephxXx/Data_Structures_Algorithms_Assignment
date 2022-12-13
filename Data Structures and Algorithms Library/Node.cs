@@ -8,6 +8,7 @@ namespace data_structures_algorithms_library
     {
         public Node LeftNode { get; set; }
         public Node RightNode { get; set; }
-        public int Data { get; set; }
+        //public int Data { get; set; }
+        public String Data { get; set; }
     }
 }
