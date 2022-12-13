@@ -26,7 +26,7 @@ namespace data_structures_algorithms_library
             //this.enrol = new Enrollment();
         }
 
-        public Student(string Program, string DateRegistered, string personName, string personEmail, string personTelNum, Enrollment enrollment)
+        public Student(String Program, String DateRegistered, String personName, String personEmail, String personTelNum, Enrollment enrollment) : base()
         {
             Program = this.Program;
             DateRegistered = this.DateRegistered;
@@ -46,9 +46,9 @@ namespace data_structures_algorithms_library
             this.enrol = new Enrollment();
         }
 
-        public override string ToString()
+        public override String ToString()
         {
-            return string.Format("{0} {1}", personName, Program);
+            return String.Format("{0} {1}", personName, Program);
 
             // auto generated
             //return base.ToString();
@@ -89,7 +89,7 @@ namespace data_structures_algorithms_library
         // To do: generate random number / salt for each instance
         // not the most secure at the moment, as the salt isn't randomly generated and saved each time, but functions for now
 
-        public int GetHashCodeUnique(string Program, string DateRegistered)
+        public int GetHashCodeUnique(String Program, String DateRegistered)
         {
             int salt;
             salt = 1495745;

@@ -6,22 +6,22 @@ namespace data_structures_algorithms_library
 {
     class Enrollment
     {
-        public string dateEnrolled { get; set; }
+        public String dateEnrolled { get; set; }
         public int grade { get; set; }
-        public string semester { get; set; }
+        public String semester { get; set; }
         public Course course { get; set; }
 
         //public string courseCode { get; set; }
         //public string courseName { get; set; }
         //public int courseCost { get; set; }
 
-        private string DEFAULT_DATE = "Monday 1/4/2000";
+        private String DEFAULT_DATE = "Monday 1/4/2000";
         private int DEFAULT_GRADE = 0;
-        private string DEFAULT_SEMESTER = "semester not found";
+        private String DEFAULT_SEMESTER = "semester not found";
         private Course DEFAULT_COURSE = new Course();
 
 
-        public Enrollment(string dateEnrolled, int grade, string semester) //, Course course)
+        public Enrollment(string dateEnrolled, int grade, String semester) //, Course course)
         {
             this.dateEnrolled = dateEnrolled;
             this.grade = grade;

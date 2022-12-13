@@ -6,8 +6,8 @@ namespace data_structures_algorithms_library
 {
     class Course
     {
-        public string courseCode { get; set; }
-        public string courseName { get; set; }
+        public String courseCode { get; set; }
+        public String courseName { get; set; }
         public int courseCost { get; set; }
 
         // aggregation
@@ -15,8 +15,8 @@ namespace data_structures_algorithms_library
         //private Enrollment enrollment_course;
         //public Enrollment enrollment_course;
 
-        private string DEFAULT_COURSE_CODE = "N/A";
-        private string DEFAULT_COURSE_NAME = "course name not found";
+        private String DEFAULT_COURSE_CODE = "N/A";
+        private String DEFAULT_COURSE_NAME = "course name not found";
         private int DEFAULT_COURSE_COST = 0;
 
         public Course(String courseCode, String courseName, int courseCost) //Enrollment enrollment_course)

@@ -139,6 +139,10 @@ namespace data_structures_algorithms_library
             // *** works when I do it like this vvv but I can't save that student to use elsewhere, eg. finding it in the linkedlist
             //studentDLL.AddLast(new Student { personName = "Amethyst", Program = "Geology", DateRegistered = "1/11/2000" });
 
+            //Console.WriteLine(" \n testing:");
+            //Student student_test = new Student("Geology", "1/11/2000", "Amethyst", "ame@hotmale.com", "01189998819991197253", new Enrollment());
+            //Console.WriteLine(student_test + " \n end of testing:");
+
             Student student_test2;
 
             studentDLL.AddLast(student_test2 = new Student { personName = "Amethyst", Program = "Geology", DateRegistered = "1/11/2000" });
@@ -164,6 +168,13 @@ namespace data_structures_algorithms_library
             {
                 Console.WriteLine(value);
             }
+
+            // used names for the binary search tree as I don't have an id attribute in my student class
+            Student studentBinTreeTest;
+            Student studentBinTreeTest1;
+            Student studentBinTreeTest2;
+
+            BinaryTree.Add(studentBinTreeTest = new Student { personName = "Amethyst" });
 
         }
     }

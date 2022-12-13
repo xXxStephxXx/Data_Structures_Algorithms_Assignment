@@ -6,17 +6,17 @@ namespace data_structures_algorithms_library
 {
     class Address
     {
-        public string Number { get; set; }
-        public string Street { get; set; }
-        public string Suburb { get; set; }
-        public string Postcode { get; set; }
-        public string State { get; set; }
+        public String Number { get; set; }
+        public String Street { get; set; }
+        public String Suburb { get; set; }
+        public String Postcode { get; set; }
+        public String State { get; set; }
 
-        string DEFAULT_NUMBER = "0";
-        string DEFAULT_STREET = "no street given";
-        string DEFAULT_SUBURB = "no suburb given";
-        string DEFAULT_POSTCODE = "no postcode given";
-        string DEFAULT_STATE = "no state given";
+        String DEFAULT_NUMBER = "0";
+        String DEFAULT_STREET = "no street given";
+        String DEFAULT_SUBURB = "no suburb given";
+        String DEFAULT_POSTCODE = "no postcode given";
+        String DEFAULT_STATE = "no state given";
 
         public Address()
         {
@@ -27,7 +27,7 @@ namespace data_structures_algorithms_library
             this.State = DEFAULT_STATE;
         }
 
-        public Address(string Number, string Street, string Suburb, string Postcode, string State)
+        public Address(String Number, String Street, String Suburb, String Postcode, String State)
         {
             this.Number = Number;
             this.Street = Street;
